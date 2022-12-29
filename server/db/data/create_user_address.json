@@ -1,0 +1,28 @@
+{
+  "billingAddress": {
+    "userId": 1,
+    "firstName": "Olaf",
+    "lastName": "Kertzmann",
+    "mobileNo": 9539485324,
+    "alternateMobileNo": 6789240686,
+    "fullAddress": "0391 Timothy Point",
+    "landmark": "Suite 946",
+    "pincode": "32979",
+    "city": "North Jarrettfield",
+    "country": "Portugal",
+    "state": "West Virginia"
+  },
+  "pickupAddress": {
+    "userId": 1,
+    "firstName": "Olaf",
+    "lastName": "Kertzmann",
+    "mobileNo": 9539485324,
+    "alternateMobileNo": 6789240686,
+    "fullAddress": "0391 Timothy Point",
+    "landmark": "Suite 946",
+    "pincode": "32979",
+    "city": "North Jarrettfield",
+    "country": "Portugal",
+    "state": "West Virginia"
+  }
+}

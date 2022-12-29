@@ -1,0 +1,53 @@
+{
+  "shippingPartnerId": 1,
+  "shipmentModeId": 1,
+  "deliveryAddress": {
+    "firstName": "Vishal",
+    "lastName": "Basumatary",
+    "mobileNo": 8134003822,
+    "alternateMobileNo": 7635927910,
+    "fullAddress": "Bylane 55",
+    "landmark": "Home",
+    "pincode": "783364",
+    "city": "Kokrajhar",
+    "country": "India",
+    "state": "Assam",
+    "userId": 1
+  },
+  "pickupAddress": {
+    "firstName": "Vishal",
+    "lastName": "Basumatary",
+    "mobileNo": 8134003822,
+    "alternateMobileNo": 7635927910,
+    "fullAddress": "Bylane 55",
+    "landmark": "Home",
+    "pincode": "783364",
+    "city": "Kokrajhar",
+    "country": "India",
+    "state": "Assam",
+    "userId": 1
+  },
+  "shipmentDetails": {
+    "actualWeight": 1,
+    "length": 10,
+    "breadth": 20,
+    "height": 30
+  },
+
+  "items": [
+    {
+      "productName": "Maggi",
+      "sku": "MAGGI",
+      "hsn": "1234",
+      "qty": 5,
+      "unitPrice": 10
+    },
+    {
+      "productName": "Soap",
+      "sku": "SOAP",
+      "hsn": "4635",
+      "qty": 3,
+      "unitPrice": 33
+    }
+  ]
+}

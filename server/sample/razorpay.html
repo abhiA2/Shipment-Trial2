@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <form method="POST" action="https://api.razorpay.com/v1/checkout/embedded">
+      <input type="hidden" name="key_id" value="rzp_test_tnL4o80AJzUzc8" />
+      <input type="hidden" name="amount" value="5000" />
+      <input type="hidden" name="order_id" value="order_KqV8tvYBVBr2OS" />
+      <input type="hidden" name="name" value="Ghost Logistics" />
+      <input type="hidden" name="description" value="Air Global" />
+      <input
+        type="hidden"
+        name="image"
+        value="https://cdn.razorpay.com/logos/BUVwvgaqVByGp2_large.jpg"
+      />
+      <input type="hidden" name="prefill[name]" value="Gaurav Kumar" />
+      <input type="hidden" name="prefill[contact]" value="9123456780" />
+      <input
+        type="hidden"
+        name="prefill[email]"
+        value="gaurav.kumar@example.com"
+      />
+      <input
+        type="hidden"
+        name="notes[shipping address]"
+        value="L-16, The Business Centre, 61 Wellfield Road, New Delhi - 110001"
+      />
+      <input
+        type="hidden"
+        name="callback_url"
+        value="https://example.com/payment-callback"
+      />
+      <input
+        type="hidden"
+        name="cancel_url"
+        value="https://example.com/payment-cancel"
+      />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
