@@ -1,23 +1,37 @@
 import { useState } from "react";
 import styled from "styled-components";
-// import "./signUp.css";
-import "./SignUp.css";
+import "./SignUp2.css";
 import authApi from "../../../api/auth";
 import store from "../../../store/index";
+import { MDBInputGroup } from "mdb-react-ui-kit";
+import {
+  MDBContainer,
+  MDBRow,
+  MDBCard,
+  MDBCardHeader,
+  MDBCol,
+  MDBCardBody,
+  MDBTabs,
+  MDBTabsItem,
+  MDBTabsLink,
+  MDBTabsPane,
+  MDBTabsContent,
+  MDBIcon,
+  MDBCheckbox,
+  MDBInput,
+  MDBBtn,
+  MDBTextArea,
+} from "mdb-react-ui-kit";
 const SignUp = () => {
-  // const [email, setEmail] = useState();
-  // const [password, setPassword] = useState();
-
   const [user, setUser] = useState({
-    firstName: "Test",
-    lastName: "Person",
-    mobileNumber: "9282992922",
-    email: "test2@gmail.com",
-    password: "12341234",
-    confirmPassword: "12341234",
-    accountType: "personal",
+    firstName: "",
+    lastName: "",
+    mobileNumber: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    accountType: "",
   });
-  // console.log("USER", user);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -33,9 +47,7 @@ const SignUp = () => {
           accountType: user.accountType,
         },
       };
-      // console.log(data.token);
       console.log(payload.authToken);
-      //dispatch action to store
       store.dispatch({ type: "REGISTER", payload: payload });
     } catch (error) {
       console.log(error);
@@ -43,164 +55,178 @@ const SignUp = () => {
   };
 
   return (
-    <Register>
-      <div align="center">
-        {/* <h2 className="text">Registration</h2> */}
-        <form onSubmit={submitHandler}>
-          <div className="input-box">
-            <input
-              type="text"
-              placeholder="Enter your first name"
-              onChange={(e) => setUser({ ...user, firstName: e.target.value })}
-              value={user.firstName}
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="text"
-              placeholder="Enter your last name"
-              onChange={(e) => setUser({ ...user, lastName: e.target.value })}
-              value={user.lastName}
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              onChange={(e) => setUser({ ...user, email: e.target.value })}
-              value={user.email}
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="number"
-              placeholder="Enter your mobile number"
-              onChange={(e) =>
-                setUser({ ...user, mobileNumber: e.target.value })
-              }
-              value={user.mobileNumber}
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="password"
-              placeholder="Create password"
-              onChange={(e) => setUser({ ...user, password: e.target.value })}
-              value={user.password}
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="password"
-              placeholder="Confirm password"
-              onChange={(e) =>
-                setUser({ ...user, confirmPassword: e.target.value })
-              }
-              value={user.confirmPassword}
-              required
-            />
-          </div>
+    <div>
+      <MDBContainer fluid>
+        <section className="background-radial-gradient overflow-hidden">
+          <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+            <div className="row gx-lg-5 align-items-center mb-5">
+              <div className="col-lg-6 mb-5 mb-lg-0" style={{ zIndex: 10 }}>
+                <h1
+                  className="my-5 display-3 fw-bold ls-tight"
+                  style={{ color: "hsl(218, 81%, 95%)" }}
+                >
+                  Register <br />
+                  <span style={{ color: "hsl(218, 81%, 75%)" }}>
+                    for easy access
+                  </span>
+                </h1>
+                <p
+                  className="mb-4 opacity-70"
+                  style={{ color: "hsl(218, 81%, 85%)" }}
+                >
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Temporibus, expedita iusto veniam atque, magni tempora
+                  mollitia dolorum consequatur nulla, neque debitis eos
+                  reprehenderit quasi ab ipsum nisi dolorem modi. Quos?
+                </p>
+              </div>
 
-          <div className="input-box button">
-            <input type="Submit" />
+              <div className="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div
+                  id="radius-shape-1"
+                  className="position-absolute rounded-circle shadow-5-strong"
+                ></div>
+                <div
+                  id="radius-shape-2"
+                  className="position-absolute shadow-5-strong"
+                ></div>
+
+                <div className="card bg-glass">
+                  <div className=" px-4 py-5 px-md-5 px-lg-5 ">
+                    <form onSubmit={submitHandler}>
+                      <MDBInput
+                        className="mb-4"
+                        id="first2"
+                        placeholder="First name"
+                        onChange={(e) =>
+                          setUser({ ...user, firstName: e.target.value })
+                        }
+                        value={user.firstName}
+                        required
+                      />
+                      <MDBInput
+                        className="mb-4"
+                        id="last2"
+                        placeholder="Last name"
+                        onChange={(e) =>
+                          setUser({ ...user, lastName: e.target.value })
+                        }
+                        value={user.lastName}
+                        required
+                      />
+                      <MDBInput
+                        className="mb-4"
+                        type="email"
+                        id="email2"
+                        placeholder="Email address"
+                        onChange={(e) =>
+                          setUser({ ...user, email: e.target.value })
+                        }
+                        value={user.email}
+                        required
+                      />
+                      <MDBInput
+                        className="mb-4"
+                        type="number"
+                        id="mobileNumber"
+                        placeholder="Mobile Number"
+                        onChange={(e) =>
+                          setUser({ ...user, mobileNumber: e.target.value })
+                        }
+                        value={user.mobileNumber}
+                        required
+                      />
+                      <MDBInput
+                        className="mb-4"
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        onChange={(e) =>
+                          setUser({ ...user, password: e.target.value })
+                        }
+                        value={user.password}
+                        required
+                      />
+                      <MDBInput
+                        className="mb-4"
+                        type="password"
+                        id="Cpassword"
+                        placeholder="Confirm Password"
+                        onChange={(e) =>
+                          setUser({ ...user, confirmPassword: e.target.value })
+                        }
+                        value={user.confirmPassword}
+                        required
+                      />
+                      {/* 
+                      //Checkbox
+                      <MDBRow className="mb-4 justify-content-center">
+                        <MDBCol
+                          md="6"
+                          className="d-flex justify-content-center"
+                        >
+                          <MDBCheckbox
+                            className=" mb-3 mb-md-0"
+                            defaultChecked
+                            label=" Subscribe to our newsletter"
+                          />
+                        </MDBCol>
+                      </MDBRow> */}
+                      <div align="center">
+                        <button className=" btn-block" type="Submit">
+                          Register
+                        </button>
+                      </div>
+                      <hr />
+                      <div className="text-center">
+                        <p>or sign up with:</p>
+                        <MDBBtn
+                          color="link"
+                          type="button"
+                          floating
+                          className="mx-1"
+                        >
+                          <MDBIcon fab icon="facebook-f" />
+                        </MDBBtn>
+
+                        <MDBBtn
+                          color="link"
+                          type="button"
+                          floating
+                          className="mx-1"
+                        >
+                          <MDBIcon fab icon="google" />
+                        </MDBBtn>
+
+                        <MDBBtn
+                          color="link"
+                          type="button"
+                          floating
+                          className="mx-1"
+                        >
+                          <MDBIcon fab icon="twitter" />
+                        </MDBBtn>
+
+                        <MDBBtn
+                          color="link"
+                          type="button"
+                          floating
+                          className="mx-1"
+                        >
+                          <MDBIcon fab icon="github" />
+                        </MDBBtn>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="text">
-            <h3>
-              Already have an account? <a href="/login">Login now</a>
-            </h3>
-          </div>
-        </form>
-      </div>
-      {/* <div className="signUp-image">
-          <img src="public/images/hero1.svg" />
-        </div> */}
-    </Register>
+        </section>
+      </MDBContainer>
+    </div>
   );
 };
-
-const Register = styled.div`
-  .wrapper {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    max-width: 430px;
-    width: 50%;
-    background: #fff;
-    padding: 34px;
-    border-radius: 3px;
-  }
-  .wrapper h2 {
-    position: absolute;
-    font-size: 22px;
-    font-weight: 600;
-    color: #333;
-  }
-
-  .wrapper form {
-    margin: 30px;
-  }
-  .wrapper form .input-box {
-    height: 50px;
-    margin: 18px 0;
-  }
-  form .input-box input {
-    height: 100%;
-    width: 100%;
-    outline: none;
-    padding: 10 15;
-    font-size: 17px;
-    font-weight: 400;
-    color: #333;
-    border: 1.5px solid #c7bebe;
-    border-bottom-width: 2.5px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-  }
-  .input-box input:focus,
-  .input-box input:valid {
-    border-color: #4070f4;
-  }
-  form .policy {
-    display: flex;
-    align-items: center;
-  }
-  form h3 {
-    color: #707070;
-    font-size: 14px;
-    font-weight: 500;
-    margin-left: 10px;
-  }
-  .input-box.button input {
-    color: #fff;
-    letter-spacing: 1px;
-    border: none;
-    background: #4070f4;
-    cursor: pointer;
-  }
-  .input-box.button input:hover {
-    background: #0e4bf1;
-  }
-  form .text h3 {
-    color: #333;
-    width: 100%;
-    text-align: center;
-  }
-  form .text h3 a {
-    color: #4070f4;
-    text-decoration: none;
-  }
-  form .text h3 a:hover {
-    text-decoration: underline;
-  }
-  signUp-image {
-    max-width: 50%;
-  }
-`;
 
 export default SignUp;
 

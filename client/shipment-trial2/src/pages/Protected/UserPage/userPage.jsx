@@ -24,16 +24,14 @@ import React, { useState } from "react";
 // import "./userPage.css";
 import Header from "./Header/Header";
 import Sidebar from "./Sidebar/sidebar";
-import MainContent from "./MainContent/MainContent";
+// import MainContent from "./MainContent/MainContent";
 
-const UserPage = () => {
-  const [activeLink, setActiveLink] = useState("");
-
+const UserPage = ({ activeLink }) => {
   return (
     <div>
       <Header />
-      <Sidebar setActiveLink={setActiveLink} />
-      <MainContent activeLink={activeLink} setActiveLink={setActiveLink} />
+      <Sidebar />
+      {/* <MainContent activeLink={activeLink} /> */}
     </div>
   );
 };

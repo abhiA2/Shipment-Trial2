@@ -1,214 +1,11 @@
-// // import { useState } from "react";
-// import { Formik } from "formik";
-// import { useNavigate } from "react-router-dom";
-// import * as Yup from "yup";
-// import "./SignIn.css";
-// // import axios from "axios";
-
-// const schema = Yup.object().shape({
-//   email: Yup.string().email().required("Required"),
-//   password: Yup.string()
-//     .required("No password provided.")
-//     .min(8, "Password is too short - should be 8 chars minimum.")
-//     .matches(/(?=.*[0-9])/, "Password must contain a number."),
-// });
-
-// const SignIn = () => {
-//   //   const [msg, setMsg] = useState("");
-//   const Navigate = useNavigate();
-
-//   <Formik
-//     validationSchema={schema}
-//     initialValues={{ email: "", password: "" }}
-//     onSubmit={async (values) => {
-//       // Alert the input values of the form that we filled
-//       alert(JSON.stringify(values));
-//       alert.on(values);
-
-//       try {
-//         await axios.post(
-//           "http://localhost:9191/auth/login",
-//           {
-//             email: email,
-//             password: password,
-//           },
-//           {
-//             method: "GET",
-//             mode: "no-cors",
-//             headers: {
-//               "Access-Control-Allow-Origin": "*",
-//               "Content-Type": "application/json",
-//             },
-//           },
-//           {
-//             withCredentials: true,
-//             credentials: "same-origin",
-//           }
-//         );
-//         Navigate("/dashboard");
-//       } catch (error) {
-//         if (error.response) {
-//           setMsg(error.response.data.msg);
-//         }
-//       }
-//     }}
-//   >
-//     {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
-//       <div className="login">
-//         <div className="form">
-//           {/* Passing handleSubmit parameter tohtml form onSubmit property */}
-//           <form noValidate onSubmit={handleSubmit}>
-//             <span>Login</span>
-//             {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
-//             <input
-//               type="email"
-//               name="email"
-//               onChange={handleChange}
-//               onBlur={handleBlur}
-//               value={values.email}
-//               placeholder="Enter email id / username"
-//               className="form-control inp_text"
-//               id="email"
-//             />
-//             {/* If validation is not passed show errors */}
-//             <p className="error">
-//               {errors.email && touched.email && errors.email}
-//             </p>
-//             {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
-//             <input
-//               type="password"
-//               name="password"
-//               onChange={handleChange}
-//               onBlur={handleBlur}
-//               value={values.password}
-//               placeholder="Enter password"
-//               className="form-control"
-//             />
-//             {/* If validation is not passed show errors */}
-//             <p className="error">
-//               {errors.password && touched.password && errors.password}
-//             </p>
-//             {/* Click on submit button to submit the form */}
-//             <button type="submit">Login</button>
-//           </form>
-//         </div>
-//       </div>
-//     )}
-//   </Formik>;
-// };
-
-// export default SignIn;
-// import { Formik } from "formik";
-// import * as Yup from "yup";
-// import { useNavigate } from "react-router-dom";
-// import "./SignIn.css";
-
-// // Creating schema
-// const schema = Yup.object().shape({
-//   email: Yup.string()
-//     .required("Email is a required field")
-//     .email("Invalid email format"),
-//   password: Yup.string()
-//     .required("Password is a required field")
-//     .min(8, "Password must be at least 8 characters"),
-// });
-
-// const SignIn = () => {
-//   const Navigate = useNavigate();
-
-//   const submitHandler = async (e) => {
-//     e.preventDefault();
-//     try {
-//       await axios.post(
-//         "http://localhost:9191/auth/login",
-//         {
-//           email: email,
-//           password: password,
-//         },
-//         {
-//           method: "GET",
-//           mode: "no-cors",
-//           headers: {
-//             "Access-Control-Allow-Origin": "*",
-//             "Content-Type": "application/json",
-//           },
-//         },
-//         {
-//           withCredentials: true,
-//           credentials: "same-origin",
-//         }
-//       );
-//       Navigate("/dashboard");
-//     } catch (error) {
-//       if (error.response) {
-//         setMsg(error.response.data.msg);
-//       }
-//     }
-//   };
-
-//   return (
-//     <Formik>
-//       <div className="login">
-//         //{" "}
-//         <div className="form">
-//           //{" "}
-//           {/* Passing handleSubmit parameter tohtml form onSubmit property */}
-//           //{" "}
-//           <form noValidate onSubmit={submitHandler}>
-//             // <span>Login</span>
-//             //{" "}
-//             {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
-//             //{" "}
-//             <input
-//               type="email"
-//               name="email"
-//               onChange={handleChange}
-//               onBlur={handleBlur}
-//               value={values.email}
-//               placeholder="Enter email id / username"
-//               className="form-control inp_text"
-//               id="email"
-//             />
-//             {/* If validation is not passed show errors */}
-//             <p className="error">
-//               {errors.email && touched.email && errors.email}
-//             </p>
-//             {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
-//             <input
-//               type="password"
-//               name="password"
-//               onChange={handleChange}
-//               onBlur={handleBlur}
-//               value={values.password}
-//               placeholder="Enter password"
-//               className="form-control"
-//             />
-//             {/* If validation is not passed show errors */}
-//             <p className="error">
-//               {errors.password && touched.password && errors.password}
-//             </p>
-//             {/* Click on submit button to submit the form */}
-//             <button type="submit">Login</button>
-//           </form>
-//         </div>
-//       </div>
-//     </Formik>
-//   );
-// };
-
-// export default SignIn;
-
 import React, { useState } from "react";
-// import SignInForm from "./SignInForm";
-// import authApi from "../../api/auth";
+
 import store from "../../../store/index";
 import { useNavigate } from "react-router-dom";
 import authApi from "../../../api/auth";
 
-// import { validateCredentials } from "./validateCredentials";
+import "./SignIn.css";
 const SignIn = () => {
-  // const [email, setEmail] = useState();
-  // const [pass, setPass] = useState();
   const Navigate = useNavigate();
 
   const [error, setError] = useState(null);
@@ -253,48 +50,236 @@ const SignIn = () => {
         },
       };
       store.dispatch({ type: "LOGIN", payload: payload });
-      Navigate("/dashboard");
+      Navigate("/userPage");
     } catch (error) {
       console.log(error);
     }
   };
+
+  //ANIMATED LOGIN FORM "return1"
+  //   return (
+  //     <div className="wrwapper">
+  //       <div className="login-box">
+  //         <h2>Login</h2>
+  //         <form>
+  //           <div className="user-box">
+  //             <input type="text" name="" required="" />
+  //             <label>Username</label>
+  //           </div>
+  //           <div className="user-box">
+  //             <input type="password" name="" required="" />
+  //             <label>Password</label>
+  //           </div>
+  //           <a href="#">
+  //             <span></span>
+  //             <span></span>
+  //             <span></span>
+  //             <span></span>
+  //             Submit
+  //           </a>
+  //         </form>
+  //       </div>
+  //     </div>
+  //   );
+  // };
+
+  // export default SignIn;
+
+  /* {error && <p>{error}</p>} */
+
+  /* <SignInForm onSubmit={handleSubmit} /> */
+
+  //Normal Login Form
+  //   return (
+  //     <div className="login-box">
+  //       <form onSubmit={handleSubmit}>
+  //         <MDBInput
+  //           className="user-box"
+  //           id="first2"
+  //           placeholder="Email"
+  //           onChange={(e) => setUser({ ...user, email: e.target.value })}
+  //           value={user.email}
+  //           required
+  //         />
+  //         <MDBInput
+  //           className="user-box"
+  //           id="last2"
+  //           placeholder="Password"
+  //           onChange={(e) => setUser({ ...user, password: e.target.value })}
+  //           value={user.password}
+  //           required
+  //         />
+  //         <button type="Submit" className="">
+  //           Login
+  //         </button>
+  //       </form>
+  //     </div>
+  //   );
+  // };
+
+  // export default SignIn;
+
+  // BOOTSTRAP LOGIN FORM 1
+  //   return (
+  //     <section className="vh-100">
+  //       <div className="container-fluid">
+  //         <div className="row">
+  //           <div className="col-sm-6 text-black">
+  //             <div className="px-5 ms-xl-4">
+  //               <i
+  //                 className="fas fa-crow fa-2x me-3 pt-5 mt-xl-4"
+  //                 style={{ color: "#709085" }}
+  //               ></i>
+  //               <span className="h1 fw-bold mb-0">Logo</span>
+  //             </div>
+
+  //             <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+  //               <form style={{ width: "23rem" }}>
+  //                 <h3
+  //                   className="fw-normal mb-3 pb-3"
+  //                   style={{ letterSpacing: "1px" }}
+  //                 >
+  //                   Log in
+  //                 </h3>
+
+  //                 <div className="form-outline mb-4">
+  //                   <input
+  //                     type="email"
+  //                     id="form2Example18"
+  //                     className="form-control form-control-lg"
+  //                   />
+  //                   <label className="form-label" for="form2Example18">
+  //                     Email address
+  //                   </label>
+  //                 </div>
+
+  //                 <div className="form-outline mb-4">
+  //                   <input
+  //                     type="password"
+  //                     id="form2Example28"
+  //                     className="form-control form-control-lg"
+  //                   />
+  //                   <label className="form-label" for="form2Example28">
+  //                     Password
+  //                   </label>
+  //                 </div>
+
+  //                 <div className="pt-1 mb-4">
+  //                   <button
+  //                     className="btn btn-info btn-lg btn-block"
+  //                     type="button"
+  //                   >
+  //                     Login
+  //                   </button>
+  //                 </div>
+
+  //                 <p className="small mb-5 pb-lg-2">
+  //                   <a className="text-muted" href="#!">
+  //                     Forgot password?
+  //                   </a>
+  //                 </p>
+  //                 <p>
+  //                   Don't have an account?{" "}
+  //                   <a href="#!" className="link-info">
+  //                     Register here
+  //                   </a>
+  //                 </p>
+  //               </form>
+  //             </div>
+  //           </div>
+  //           <div className="col-sm-6 px-0 d-none d-sm-block">
+  //             <img
+  //               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+  //               alt="Login image"
+  //               className="w-100 vh-100"
+  //               style={{ objectFit: "cover", objectPosition: "left" }}
+  //             />
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </section>
+  //   );
+  // };
+  // export default SignIn;
+
+  //BOOTSTRAP LOGIN FORM2 return2
+
   return (
-    <div>
-      {/* {error && <p>{error}</p>} */}
-      {/* <SignInForm onSubmit={handleSubmit} /> */}
-      <div align="center">
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="username">
-              Username:
-              <input
-                type="text"
-                name="username"
-                onChange={(e) => setUser({ ...user, email: e.target.value })}
-                value={user.email}
-              />
-            </label>
-          </div>
-          <br />
-          <label>
-            Password:
-            <input
-              type="password"
-              name="password"
-              onChange={(e) => setUser({ ...user, password: e.target.value })}
-              value={user.password}
+    <section className="vh-100">
+      <div className="container-fluid h-custom">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-md-9 col-lg-6 col-xl-5">
+            <h2>Login</h2>
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+              className="img-fluid"
+              alt="Sample image"
             />
-          </label>
-          <br />
-          <button type="submit">Log in</button>
-        </form>
+          </div>
+          <div
+            className="col-md-8 col-lg-6 col-xl-4 offset-xl-1"
+            align="center"
+          >
+            <form onSubmit={handleSubmit}>
+              <div className="form-outline mb-4">
+                <input
+                  type="email"
+                  id="form3Example3"
+                  className="form-control form-control-lg"
+                  placeholder="Enter a valid email address"
+                />
+                <label className="form-label" for="form3Example3">
+                  Email address
+                </label>
+              </div>
+
+              <div className="form-outline mb-3">
+                <input
+                  type="password"
+                  id="form3Example4"
+                  className="form-control form-control-lg"
+                  placeholder="Enter password"
+                />
+                <label className="form-label" for="form3Example4">
+                  Password
+                </label>
+              </div>
+
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="form-check mb-0">
+                  <input type="checkbox" value="" id="form2Example3" />
+                  <label className="form-check-label" for="form2Example3">
+                    Remember me
+                  </label>
+                </div>
+                <a href="#!" className="text-body">
+                  Forgot password?
+                </a>
+              </div>
+
+              <div className="text-center text-lg-start mt-4 pt-2">
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-lg"
+                  style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
+                >
+                  Login
+                </button>
+                <p className="small fw-bold mt-2 pt-1 mb-0">
+                  Don't have an account?{" "}
+                  <a href="/register" className="link-danger">
+                    Register
+                  </a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
-
 export default SignIn;
-
 //Type A
 // import React, { useState, useRef } from "react";
 // import { useDispatch, useSelector } from "react-redux";

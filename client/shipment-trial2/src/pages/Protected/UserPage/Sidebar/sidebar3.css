@@ -1,0 +1,39 @@
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+
+.sidebar-links li {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar-links li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar-links li.active {
+  background-color: #eee;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  /* fit: content 100px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  padding: 20px;
+}

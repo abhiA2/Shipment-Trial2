@@ -934,13 +934,13 @@
 // //Type 2
 
 import React from "react";
-
+import "./orders.css";
 const Orders = () => {
   return (
     <div className="card-body">
       <h5 className="card-title">Multi Columns Form</h5>
-      <form className="row g-3">
-        <div className="col-md-12">
+      <form className=" row g-3">
+        <div className="col-md-10 col-lg-8">
           {" "}
           <label for="inputName5" className="form-label">
             Your Name

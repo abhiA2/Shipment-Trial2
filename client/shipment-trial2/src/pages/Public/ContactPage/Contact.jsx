@@ -1,63 +1,127 @@
 import React from "react";
-import img from "../../../../public/images/ContactPage/contact.jpg";
+import HeroImage from "../../../../assets/img/ContactHero.jpg";
 import Back from "../../../components/common/Back";
-import styled from "styled-components";
-
+import Heading from "../../../components/common/Heading";
+import "./Contact.css";
 const Contact = () => {
   return (
-    <Wrapper>
-      <section className="contact mb">
-        <Back
-          name="Contact Us"
-          title="Get Helps & Friendly Support"
-          cover={img}
-        />
-        <div className="container">
-          <form className="shadow">
-            <h4>Fillup The Form</h4> <br />
-            <div>
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Email" />
-            </div>
-            <input type="text" placeholder="Subject" />
-            <textarea cols="30" rows="10"></textarea>
-            <button>Submit Request</button>
-          </form>
+    <div>
+      <div className="home">
+        <div className="hero-image">
+          <img src={HeroImage} intrinsicSize={{ width: 5472, height: 3648 }} />
         </div>
-      </section>
-    </Wrapper>
+      </div>
+      <div className="container position-relative ">
+        <div className="row d-flex justify-content-center">
+          <div className="col-lg-6 text-center ">
+            <div className="section-titlle">
+              <h2>Contact</h2>
+            </div>
+            <p>Reach out to us</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact" className="contact">
+        <div className="container aos-init aos-animate" data-aos="fade-up">
+          <div className="row">
+            <div className="col-lg-5 d-flex align-items-stretch">
+              <div className="info">
+                <div className="address">
+                  {" "}
+                  <i className="bi bi-geo-alt"></i>
+                  <h4>Location:</h4>
+                  <p>A108 Adam Street, New York, NY 535022</p>
+                </div>
+                <div className="email">
+                  {" "}
+                  <i className="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>info@example.com</p>
+                </div>
+                <div className="phone">
+                  {" "}
+                  <i className="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+1 5589 55488 55s</p>
+                </div>{" "}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                  // frameBorder="0"
+                  style={{ border: "0", width: "100%", height: " 290px" }}
+                  allowFullScreen=""
+                ></iframe>
+              </div>
+            </div>
+            <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+              <form
+                action=""
+                method="post"
+                role="form"
+                className="php-email-form"
+              >
+                <div className="row">
+                  <div className="form-group col-md-6">
+                    {" "}
+                    <label htmlFor="name">Your Name</label>{" "}
+                    <input
+                      type="text"
+                      name="name"
+                      className="form-control"
+                      id="name"
+                      required=""
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    {" "}
+                    <label htmlFor="name">Your Email</label>{" "}
+                    <input
+                      type="email"
+                      className="form-control"
+                      name="email"
+                      id="email"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  {" "}
+                  <label htmlFor="name">Subject</label>{" "}
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="subject"
+                    id="subject"
+                    required=""
+                  />
+                </div>
+                <div className="form-group">
+                  {" "}
+                  <label htmlFor="name">Message</label>
+                  <textarea
+                    className="form-control"
+                    name="message"
+                    rows="10"
+                    required=""
+                  ></textarea>
+                </div>
+                <div className="my-3">
+                  <div className="loading">Loading</div>
+                  <div className="error-message"></div>
+                  <div className="sent-message">
+                    Your message has been sent. Thank you!
+                  </div>
+                </div>
+                <div className="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
-
-const Wrapper = styled.section`
-  .contact form div {
-    display: flex;
-  }
-  .contact textarea {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  .contact input {
-    margin-bottom: 20px;
-    margin-right: 10px;
-  }
-  .contact form {
-    padding: 30px;
-  }
-  @media screen and (max-width: 768px) {
-    .contact h4 {
-      width: 100%;
-      margin-bottom: 30px;
-    }
-    .contact form div {
-      flex-direction: column;
-    }
-    .contact input {
-      width: 100%;
-    }
-  }
-`;
 
 export default Contact;

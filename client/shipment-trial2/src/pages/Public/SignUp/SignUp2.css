@@ -1,0 +1,125 @@
+/* .container {
+  width: calc(100% - 30px);
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .signup-content,
+  .signin-content {
+    flex-direction: column;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -o-flex-direction: column;
+    -ms-flex-direction: column;
+    justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center;
+    align-items: center;
+  }
+  .signup-form {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding: 0 10px;
+  }
+  .signin-image {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 50px;
+    order: 2;
+    -moz-order: 2;
+    -webkit-order: 2;
+    -o-order: 2;
+    -ms-order: 2;
+  }
+  .signup-form,
+  .signup-image,
+  .signin-form,
+  .signin-image {
+    width: auto;
+  }
+  .social-login {
+    justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center;
+  }
+  .form-button {
+    text-align: center;
+  }
+  .signin-form {
+    order: 1;
+    -moz-order: 1;
+    -webkit-order: 1;
+    -o-order: 1;
+    -ms-order: 1;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0 30px;
+  }
+  .form-title {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .social-login {
+    flex-direction: column;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -o-flex-direction: column;
+    -ms-flex-direction: column;
+  }
+  .social-label {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+} */
+
+.background-radial-gradient {
+  background-color: #172236;
+  background-image: radial-gradient(
+      650px circle at 0% 0%,
+      #354f7e 15%,
+      #2d446c 35%,
+      #1e2d48 75%,
+      #1d2b44 80%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1250px circle at 100% 100%,
+      #4466a2 15%,
+      #2d446c 35%,
+      #1e2d48 75%,
+      #1d2b44 80%,
+      transparent 100%
+    );
+}
+#radius-shape-1 {
+  height: 220px;
+  width: 220px;
+  top: -60px;
+  left: -130px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+#radius-shape-2 {
+  border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+  bottom: -60px;
+  right: -110px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+.bg-glass {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: saturate(200%) blur(25px);
+}

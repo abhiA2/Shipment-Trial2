@@ -21,30 +21,30 @@
 // };
 // export default MainContent;
 
-import React from "react";
-import Orders from "../../Orders/orders";
-import Drafts from "../../Drafts/drafts";
-const MainContent = ({ activeLink, setActiveLink }) => {
-  return (
-    <main id="main" className="main">
-      <div className="pagetitle">
-        <h1>Dashboard</h1>
-        <nav>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="#">Home</a>
-            </li>
-            <li class="breadcrumb-item active">Dashboard</li>
-          </ol>
-        </nav>
-      </div>
-      <section>
-        {activeLink === "link1" && <Orders />}
-        <div className="col-lg-8">Hello</div>
-        <div className="col-lg-4">There</div>
-      </section>
-    </main>
-  );
-};
+// import React from "react";
+// import Orders from "../../Orders/orders";
+// import Drafts from "../../Drafts/drafts";
+// const MainContent = ({ activeLink, setActiveLink }) => {
+//   return (
+//     <main id="main" className="main">
+//       <div className="pagetitle">
+//         <h1>Dashboard</h1>
+//         <nav>
+//           <ol class="breadcrumb">
+//             <li class="breadcrumb-item">
+//               <a href="#">Home</a>
+//             </li>
+//             <li class="breadcrumb-item active">Dashboard</li>
+//           </ol>
+//         </nav>
+//       </div>
+//       <section>
+//         {/* {activeLink === "link1" && <Orders />} */}
+//         <div className="col-lg-8">Hello</div>
+//         <div className="col-lg-4">There</div>
+//       </section>
+//     </main>
+//   );
+// };
 
-export default MainContent;
+// export default MainContent;
